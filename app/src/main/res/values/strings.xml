@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Simple E Commerce App</string>
+    <string name="error_message">Error!</string>
+    <string name="error_time_out">Time Out!</string>
+    <string name="error_try_again">Try Again!</string>
+    <string name="error_eofe">Flow Error!</string>
+    <string name="error_unknown">Unknown Error!</string>
+    <string name="alert_msg_ok_button">OK!</string>
+</resources>
