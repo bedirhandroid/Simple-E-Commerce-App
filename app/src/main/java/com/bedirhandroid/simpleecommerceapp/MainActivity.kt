@@ -10,16 +10,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>(){
     }
 
     override fun initListeners() {
-        viewBindingScope {
-            tvBtn.setOnClickListener {
-                viewModel.login(
-                    LoginRequest(
-                        "mor_2314",
-                        "83r5^_"
-                    )
-                )
-            }
-        }
+
     }
 
     override fun initObservers() {
