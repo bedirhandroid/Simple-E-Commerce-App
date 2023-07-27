@@ -6,4 +6,8 @@
     <string name="error_eofe">Flow Error!</string>
     <string name="error_unknown">Unknown Error!</string>
     <string name="alert_msg_ok_button">OK!</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

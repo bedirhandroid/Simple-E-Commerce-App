@@ -1,8 +1,8 @@
-package com.bedirhandroid.simpleecommerceapp.network.modules
+package com.bedirhandroid.simpleecommerceapp.network.usecases.login.module
 
 import com.bedirhandroid.simpleecommerceapp.base.Repo
-import com.bedirhandroid.simpleecommerceapp.network.usecases.LoginUseCase
-import com.bedirhandroid.simpleecommerceapp.network.usecases.LoginUseCaseImp
+import com.bedirhandroid.simpleecommerceapp.network.usecases.login.usecase.LoginUseCase
+import com.bedirhandroid.simpleecommerceapp.network.usecases.login.usecase.LoginUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +14,6 @@ object LoginUseCaseModule {
 
     @Provides
     fun provideLoginUseCase(repo: Repo): LoginUseCase {
-        return LoginUseCaseImp(repo)
+        return LoginUseCaseImpl(repo)
     }
 }

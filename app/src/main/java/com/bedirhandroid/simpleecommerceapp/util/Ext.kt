@@ -1,11 +1,14 @@
 package com.bedirhandroid.simpleecommerceapp.util
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.lifecycle.Observer
 import com.bedirhandroid.simpleecommerceapp.R
 import com.bumptech.glide.Glide
 import java.io.Serializable
@@ -17,6 +20,11 @@ fun ImageView.loadImage(url: String) {
         .into(this)
 }
 
+fun <T> observerNotNull(observer: (t: T) -> Unit) = Observer<T> {
+    it?.let {
+        observer(it)
+    }
+}
 @Suppress("DEPRECATION")
 inline fun <reified T : Serializable> Bundle.customGetSerializable(key: String): T? {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -51,4 +59,23 @@ fun Context.showAlert(
 
     create()
     show()
+}
+
+inline fun <reified T> Activity.navigateTo(
+    bundle: Bundle? = null,
+    intentFlags: Int? = null,
+    finishRequired: Boolean = false
+) {
+    Intent(this, T::class.java).apply {
+        bundle?.let { _bundle ->
+            putExtras(_bundle)
+        }
+        intentFlags?.let { _flags ->
+            flags = _flags
+        }
+    }.also {
+        startActivity(it)
+        if (finishRequired)
+            finish()
+    }
 }
