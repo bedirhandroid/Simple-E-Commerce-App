@@ -1,4 +1,4 @@
-package com.bedirhandroid.simpleecommerceapp.network.usecases.product
+package com.bedirhandroid.simpleecommerceapp.network.usecases.product.usecase
 
 import androidx.paging.PagingData
 import androidx.paging.map
@@ -16,9 +16,10 @@ class ProductUseCaseImpl @Inject constructor(private val repo: Repo) : ProductUs
                     id = productData.id.toString(),
                     title = productData.title,
                     price = productData.price,
-                    category = productData.category,
                     description = productData.description,
-                    image = productData.image
+                    image = productData.image,
+                    ratingCount = productData.rating?.count.toString(),
+                    rating = productData.rating?.rate?.toFloat()
                 )
             }
         }

@@ -22,8 +22,9 @@ fun <T> Class<T>.getBindingMethod(): Method {
 
 //init dynamic viewModel classes for fragment
 fun <VM : ViewModel> Class<VM>.getViewModelByLazy(owner: Fragment): VM {
-    return owner.createViewModelLazy(this.kotlin,{owner.viewModelStore}).value
+    return owner.createViewModelLazy(this.kotlin, { owner.viewModelStore }).value
 }
+
 //init dynamic viewModel classes for activity
 fun <VM : ViewModel> Class<VM>.getActivityViewModel(owner: AppCompatActivity): VM {
     return ViewModelProvider(owner)[this]

@@ -2,7 +2,7 @@ package com.bedirhandroid.simpleecommerceapp.base
 
 import com.bedirhandroid.simpleecommerceapp.R
 
-enum class ErrorMessages(val id : Int) {
+enum class ErrorMessages(val id: Int) {
     //Error message Types
     ERROR(R.string.error_message),
     UNKNOWN_ERROR(R.string.error_unknown),

@@ -1,12 +1,13 @@
 package com.bedirhandroid.simpleecommerceapp.ui.activities.login
 
 import androidx.lifecycle.Observer
+import com.bedirhandroid.simpleecommerceapp.R
 import com.bedirhandroid.simpleecommerceapp.base.BaseActivity
 import com.bedirhandroid.simpleecommerceapp.databinding.ActivityMainBinding
 import com.bedirhandroid.simpleecommerceapp.local.LocalDataManager
 import com.bedirhandroid.simpleecommerceapp.network.models.uiresponses.users.UsersResponseUi
 import com.bedirhandroid.simpleecommerceapp.ui.activities.dashboard.BottomNavActivity
-import com.bedirhandroid.simpleecommerceapp.ui.adapters.UsersAdapter
+import com.bedirhandroid.simpleecommerceapp.ui.adapters.users.UsersAdapter
 import com.bedirhandroid.simpleecommerceapp.util.navigateTo
 import com.bedirhandroid.simpleecommerceapp.util.observerNotNull
 import com.bedirhandroid.simpleecommerceapp.util.showAlert
@@ -23,8 +24,8 @@ class LoginActivity : BaseActivity<ActivityMainBinding, LoginActivityVM>() {
                     && binding.etPassword.text.toString() == _usersData.password
         }?.let {
             showAlert(
-                title = "Giriş Başarılı",
-                msg = "Ana Sayfaya Yönlendiriliyorsun!"
+                title = getString(R.string.success_login),
+                msg = getString(R.string.msg_nav_dashboard)
             ) {
                 LocalDataManager.getInstance().apply {
                     loginUserData = it
@@ -33,8 +34,8 @@ class LoginActivity : BaseActivity<ActivityMainBinding, LoginActivityVM>() {
             }
         } ?: kotlin.run {
             showAlert(
-                title = "Dikkat",
-                msg = "Girdiğin kullanıcı bulunamadı!"
+                title = getString(R.string.attention),
+                msg = getString(R.string.user_not_found)
             )
         }
     }

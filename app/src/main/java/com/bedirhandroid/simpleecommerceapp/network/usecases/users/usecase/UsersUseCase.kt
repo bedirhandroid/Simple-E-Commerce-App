@@ -4,5 +4,5 @@ import com.bedirhandroid.simpleecommerceapp.network.models.uiresponses.users.Use
 import kotlinx.coroutines.flow.Flow
 
 interface UsersUseCase {
-    suspend fun getUsers() : Flow<List<UsersResponseUi>?>
+    suspend fun getUsers(): Flow<List<UsersResponseUi>?>
 }

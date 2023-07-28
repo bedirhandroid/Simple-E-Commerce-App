@@ -5,5 +5,5 @@ import com.bedirhandroid.simpleecommerceapp.network.models.uiresponses.login.Log
 
 
 interface LoginUseCase {
-    suspend fun login(body: LoginRequest) : LoginResponseUi
+    suspend fun login(body: LoginRequest): LoginResponseUi
 }

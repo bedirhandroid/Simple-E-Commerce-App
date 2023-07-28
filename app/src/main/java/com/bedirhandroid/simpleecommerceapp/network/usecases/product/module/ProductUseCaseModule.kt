@@ -1,8 +1,8 @@
 package com.bedirhandroid.simpleecommerceapp.network.usecases.product.module
 
 import com.bedirhandroid.simpleecommerceapp.base.Repo
-import com.bedirhandroid.simpleecommerceapp.network.usecases.product.ProductUseCase
-import com.bedirhandroid.simpleecommerceapp.network.usecases.product.ProductUseCaseImpl
+import com.bedirhandroid.simpleecommerceapp.network.usecases.product.usecase.ProductUseCase
+import com.bedirhandroid.simpleecommerceapp.network.usecases.product.usecase.ProductUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

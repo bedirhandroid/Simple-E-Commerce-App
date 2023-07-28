@@ -1,4 +1,4 @@
-package com.bedirhandroid.simpleecommerceapp.ui.adapters
+package com.bedirhandroid.simpleecommerceapp.ui.adapters.users
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,6 +1,5 @@
 package com.bedirhandroid.simpleecommerceapp.ui.activities.dashboard
 
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -8,6 +7,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.bedirhandroid.simpleecommerceapp.R
 import com.bedirhandroid.simpleecommerceapp.base.BaseActivity
 import com.bedirhandroid.simpleecommerceapp.databinding.ActivityBottomNavBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BottomNavActivity : BaseActivity<ActivityBottomNavBinding, BottomNavActivityVM>() {
 
@@ -17,11 +17,16 @@ class BottomNavActivity : BaseActivity<ActivityBottomNavBinding, BottomNavActivi
         val navController = findNavController(R.id.nav_host_fragment_activity_bottom_nav)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_favorites, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_cart, R.id.navigation_dashboard, R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun initListeners() {

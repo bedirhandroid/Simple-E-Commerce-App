@@ -14,13 +14,13 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class Repo @Inject constructor(private val apiService: ApiService) {
-    suspend fun login(body: LoginRequest) : Flow<LoginResponseData?> {
+    suspend fun login(body: LoginRequest): Flow<LoginResponseData?> {
         return flow {
-           emit(apiService.login(body))
+            emit(apiService.login(body))
         }
     }
 
-    suspend fun getProducts() :Flow<PagingData<ProductResponseDataItem>> {
+    fun getProducts() :Flow<PagingData<ProductResponseDataItem>> {
         return Pager(
             config = PagingConfig(
                 10,
@@ -30,7 +30,13 @@ class Repo @Inject constructor(private val apiService: ApiService) {
         ).flow
     }
 
-    suspend fun getUsers() : Flow<UsersResponseDataList?> {
+    suspend fun getUsers(): Flow<UsersResponseDataList?> {
         return flow { emit(apiService.getUsers()) }
+    }
+
+    suspend fun getSingleProduct(id: String): Flow<ProductResponseDataItem?> {
+        return flow {
+            emit(apiService.getSingleProduct(id))
+        }
     }
 }

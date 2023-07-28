@@ -23,6 +23,7 @@ class LoginActivityVM @Inject constructor(
     init {
         getUser()
     }
+
     private fun getUser() {
         sendRequest {
             usersUseCase.getUsers().collectLatest {

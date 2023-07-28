@@ -1,4 +1,4 @@
-package com.bedirhandroid.simpleecommerceapp.network.usecases.product
+package com.bedirhandroid.simpleecommerceapp.network.usecases.product.usecase
 
 import androidx.paging.PagingData
 import com.bedirhandroid.simpleecommerceapp.network.models.uiresponses.product.ProductResponseUi

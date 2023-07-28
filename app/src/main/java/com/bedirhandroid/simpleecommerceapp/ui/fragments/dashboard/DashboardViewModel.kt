@@ -5,7 +5,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.bedirhandroid.simpleecommerceapp.base.BaseViewModel
 import com.bedirhandroid.simpleecommerceapp.network.models.uiresponses.product.ProductResponseUi
-import com.bedirhandroid.simpleecommerceapp.network.usecases.product.ProductUseCase
+import com.bedirhandroid.simpleecommerceapp.network.usecases.product.usecase.ProductUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

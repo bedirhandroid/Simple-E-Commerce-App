@@ -5,7 +5,7 @@ import com.bedirhandroid.simpleecommerceapp.local.LocalDataManager
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class SimpleECommerceApplication: Application() {
+class SimpleECommerceApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         startLocalDataManager()

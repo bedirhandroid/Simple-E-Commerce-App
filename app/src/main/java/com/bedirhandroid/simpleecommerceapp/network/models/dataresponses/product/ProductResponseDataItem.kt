@@ -7,5 +7,5 @@ data class ProductResponseDataItem(
     val category: String? = null,
     val description: String? = null,
     val image: String? = null,
-    val rating: Rating? = null
+    val rating: RatingData? = null
 )
