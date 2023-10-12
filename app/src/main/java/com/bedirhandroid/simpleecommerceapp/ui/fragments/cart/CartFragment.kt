@@ -15,7 +15,7 @@ import com.bedirhandroid.simpleecommerceapp.util.showAlert
 import com.bedirhandroid.simpleecommerceapp.util.visible
 
 class CartFragment : BaseFragment<FragmentCartBinding, CartViewModel>() {
-    var totalPrice: Double = 0.0
+    private var totalPrice: Double = 0.0
 
     override fun initView() {
         initDynamicView()
@@ -60,9 +60,9 @@ class CartFragment : BaseFragment<FragmentCartBinding, CartViewModel>() {
                 LocalDataManager.getInstance().localListData?.map {
                     it.price?.toDouble()
                 }.let {
-                    it?.forEach { _price ->
-                        if (_price != null) {
-                            totalPrice += _price
+                    it?.forEach { price ->
+                        price?.let {
+                            totalPrice += price
                             tvTotalPrice.text = getString(R.string.total_price, totalPrice)
                         }
                     }

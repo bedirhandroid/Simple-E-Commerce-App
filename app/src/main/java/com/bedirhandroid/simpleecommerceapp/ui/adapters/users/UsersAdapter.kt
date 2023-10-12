@@ -11,9 +11,7 @@ class UsersAdapter(
     private val clickItem: (UsersResponseUi) -> Unit,
 ) : RecyclerView.Adapter<UsersAdapter.UsersListVH>() {
 
-    class UsersListVH(val binding: UsersRowBinding) : RecyclerView.ViewHolder(binding.root) {
-
-    }
+    class UsersListVH(val binding: UsersRowBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersListVH {
         val binding = UsersRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)

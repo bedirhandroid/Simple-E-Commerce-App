@@ -19,9 +19,9 @@ class LoginActivity : BaseActivity<ActivityMainBinding, LoginActivityVM>() {
     }
 
     private val isEditedObserver: Observer<Boolean> = observerNotNull {
-        viewModel.usersListLiveData.value?.find { _usersData ->
-            binding.etUsename.text.toString() == _usersData.username
-                    && binding.etPassword.text.toString() == _usersData.password
+        viewModel.usersListLiveData.value?.find { usersData ->
+            binding.etUsename.text.toString() == usersData.username
+                    && binding.etPassword.text.toString() == usersData.password
         }?.let {
             showAlert(
                 title = getString(R.string.success_login),

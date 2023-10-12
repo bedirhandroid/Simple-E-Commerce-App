@@ -29,8 +29,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
                 true -> BottomNavActivity::class.java
                 else -> LoginActivity::class.java
             }.let {
-                Intent(this, it).also { _intent ->
-                    startActivity(_intent)
+                Intent(this, it).also { intent ->
+                    startActivity(intent)
                     finish()
                 }
             }

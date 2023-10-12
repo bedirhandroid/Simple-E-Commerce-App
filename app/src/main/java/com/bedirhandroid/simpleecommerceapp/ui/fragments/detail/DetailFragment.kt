@@ -27,8 +27,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailFragmentViewMod
     override fun initListeners() {
         viewBindingScope {
             btnAddToCart.setOnClickListener {
-                viewModel.productLiveData.value?.let { _data ->
-                    addToCart(requireContext(), _data)
+                viewModel.productLiveData.value?.let { data ->
+                    addToCart(requireContext(), data)
                 }
             }
         }

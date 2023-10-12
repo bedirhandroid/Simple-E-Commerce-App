@@ -72,11 +72,11 @@ inline fun <reified T> Activity.navigateTo(
     finishRequired: Boolean = false
 ) {
     Intent(this, T::class.java).apply {
-        bundle?.let { _bundle ->
-            putExtras(_bundle)
+        bundle?.let { bundle ->
+            putExtras(bundle)
         }
-        intentFlags?.let { _flags ->
-            flags = _flags
+        intentFlags?.let { intFlags ->
+            flags = intFlags
         }
     }.also {
         startActivity(it)

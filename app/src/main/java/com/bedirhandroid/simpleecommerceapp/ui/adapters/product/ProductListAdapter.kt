@@ -47,11 +47,11 @@ class ProductListAdapter(
 
     override fun onBindViewHolder(holder: ListAdapterVH, position: Int) {
         holder.apply {
-            getItem(position)?.let { _data ->
-                bind(_data)
+            getItem(position)?.let { data ->
+                bind(data)
                 binding.apply {
-                    btnAddToCart.setOnClickListener { clickAddToCart.invoke(_data) }
-                    root.setOnClickListener { clickItem.invoke(_data) }
+                    btnAddToCart.setOnClickListener { clickAddToCart.invoke(data) }
+                    root.setOnClickListener { clickItem.invoke(data) }
                 }
             }
         }
