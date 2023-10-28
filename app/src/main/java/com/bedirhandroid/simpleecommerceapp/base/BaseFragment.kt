@@ -11,6 +11,7 @@ import androidx.viewbinding.ViewBinding
 import com.bedirhandroid.simpleecommerceapp.util.getBindingMethod
 import com.bedirhandroid.simpleecommerceapp.util.getViewModelByLazy
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.lang.reflect.ParameterizedType
 
@@ -87,7 +88,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : HiltFragment
     //dynamic generic flow scope
     inline fun <T> Flow<T>.observeStateFlow(crossinline block: suspend T.() -> Unit) {
         lifecycleScope.launch {
-            collect {
+            collectLatest {
                 block(it)
             }
         }

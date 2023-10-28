@@ -10,7 +10,6 @@ import com.bedirhandroid.simpleecommerceapp.ui.adapters.product.ProductListAdapt
 import com.bedirhandroid.simpleecommerceapp.util.Constant
 import com.bedirhandroid.simpleecommerceapp.util.addToCart
 import com.bedirhandroid.simpleecommerceapp.util.navigateWithBundleTo
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class DashboardFragment : BaseFragment<FragmentDashboardBinding, DashboardViewModel>() {
@@ -25,14 +24,12 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding, DashboardViewMo
         }
     }
 
-    override fun initListeners() {
-
-    }
+    override fun initListeners() {}
 
     override fun initObservers() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.getProducts().collectLatest {
-                productListAdapter.submitData(it)
+            viewModel.getProducts().observeStateFlow {
+                productListAdapter.submitData(this)
             }
         }
     }

@@ -15,13 +15,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
         dynamicNavigate()
     }
 
-    override fun initListeners() {
+    override fun initListeners() {}
 
-    }
-
-    override fun initObservers() {
-
-    }
+    override fun initObservers() {}
 
     private fun dynamicNavigate() {
         Handler(Looper.getMainLooper()).postDelayed({
